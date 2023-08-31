@@ -20,6 +20,7 @@
     <!-- Nosso CSS -->
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/assets/css/pokedex.css">
+    <link rel="stylesheet" href="/assets/css/modal.css">
 </head>
 
 <body>
@@ -37,7 +38,42 @@
         </div>
     </section>
 
+    <dialog class="janela-modal" id="janela-modal">
+        <div class="modal">
+            <button class="buttonClose">Close</button>
+            <div class="aboutHeader">
+                <span class="numberAbout">#001</span>
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="bulbasaur">
+                <h1 class="nameAbout">Bulbasaur</h1>
+                <ol class="types">
+                    <li class="type grass">Grass</li>
+                    <li class="type poison"> poison</li>
+                </ol>
+            </div>
+            <div class="aboutbody">
+                <div class="about">
+                    <ol>
+                        <li>Weight</li>
+                        <li>Height</li>
+                    </ol>
+                </div>
+                <div class="status">
+                    <ol>
+                        <li>HP</li>
+                        <li>Attack</li>
+                        <li>Defense</li>
+                        <li>Sp Atk</li>
+                        <li>Sp Def</li>
+                        <li>Speed</li>
+                    </ol>
+                </div>
+            </div>
+        </dialog>
+
+    </section>
+
     <!-- Nosso JS -->
+    <script src="/assets/js/modal.js"></script>
     <script src="/assets/js/pokemon-model.js"></script>
     <script src="/assets/js/poke-api.js"></script>
     <script src="/assets/js/main.js"></script>
