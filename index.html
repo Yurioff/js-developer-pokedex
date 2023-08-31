@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
 
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
     <!-- Normalize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
@@ -38,25 +41,55 @@
         </div>
     </section>
 
-    <dialog class="janela-modal" id="janela-modal">
+    <dialog open class="janela-modal" id="janela-modal">
         <div class="modal">
             <button class="buttonClose">Close</button>
             <div class="aboutHeader">
-                <span class="numberAbout">#001</span>
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="bulbasaur">
-                <h1 class="nameAbout">Bulbasaur</h1>
-                <ol class="types">
+                <ol>
+                    <li>
+                        <span class="numberAbout">#001</span>
+                    </li>
+                    <li>
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="bulbasaur">
+                    </li>
+                    <li>
+                        <h1 class="nameAbout">Bulbasaur</h1>
+
+                    </li>
+                </ol>
+                <ol class="typesAbout">
                     <li class="type grass">Grass</li>
                     <li class="type poison"> poison</li>
                 </ol>
             </div>
+
+
             <div class="aboutbody">
-                <div class="about">
+                <nav>
+                    <div class="nav nav-tbs" id="nav-tab" role="tablist">
+                        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-about" type="button" role="tab" aria-controls="#nav-about" aria-selected="true">About</button>
+                    </div>
+                    <div class="nav nav-tbs" id="nav-tab" role="tablist">
+                        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-status" type="button" role="tab" aria-controls="#nav-status" aria-selected="true">Status</button>
+                    </div>
+                </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-about" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
                     <ol>
                         <li>Weight</li>
                         <li>Height</li>
                     </ol>
                 </div>
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+                    <ol>
+                        <li>Weight</li>
+                        <li>Height</li>
+                    </ol>
+                </div>
+            </div>
+
+                
+                <h2 id="statusTitle" class="sectionTitle">Status</h2>
                 <div class="status">
                     <ol>
                         <li>HP</li>
@@ -77,6 +110,9 @@
     <script src="/assets/js/pokemon-model.js"></script>
     <script src="/assets/js/poke-api.js"></script>
     <script src="/assets/js/main.js"></script>
+
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 
 </html>

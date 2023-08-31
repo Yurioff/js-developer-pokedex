@@ -1,10 +1,11 @@
-const modal = document.querySelector("dialog")
-const buttonClose = document.querySelector("dialog button")
+const modalOpen = document.querySelector('dialog')
+const buttonClose = document.querySelector('dialog button')
 
 pokemonList.onclick = function () {
-    modal.showModal()
+    modalOpen.showModal()
 }
 
 buttonClose.onclick = function () {
     modal.close()
 }
+
