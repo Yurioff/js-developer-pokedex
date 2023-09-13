@@ -7,15 +7,18 @@ pokemonList.onclick = function (event) {
     modalOpen.showModal();
 }
 
-buttonClose.onclick = function () {
-    modalOpen.close();
-}
+
+
 
 function loadAndPopulateModal(pokemonNumber) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonNumber}/`)
         .then(response => response.json())
         .then(data => {
             populateModal(data);
+            const closeButton = document.getElementById('btn-close-modal');
+            closeButton.onclick = function () {
+                modalOpen.close();
+            };
         })
         .catch(error => {
             console.error('Erro ao carregar dados da API:', error);
@@ -26,12 +29,18 @@ function populateModal(data) {
     const modalContent = document.querySelector('.content-card');
     
     modalContent.innerHTML = `
-        <div class="card-head">
+        <div class=menu-card>
             <button id="btn-close-modal" type="button" class="btn-close" aria-label="Close"></button>
-            <div class="card " style="width: 18rem">
+            <div class="cardName">        
+                <h5 class="card-title">${data.name}</h5>
+                <span class="number">#${data.id.toString().padStart(4, '0')}</span>
+            </div>
+        </div>
+        <div class="card-head">
+            <div class="card ${data.types[0].type.name}" style="width: 18rem">
                 <img src="${data.sprites.other.dream_world.front_default}" alt="${data.name}">
-                <div class="card-body">
-                    <h5 class="card-title">${data.name}</h5>
+                <div class="card-head-body">
+                    
                     <div class="detail-card">
                         <div class="types">
                             ${data.types.map(type => `<span class="type ${type.type.name}">${type.type.name}</span>`).join('')}
@@ -47,6 +56,9 @@ function populateModal(data) {
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Status</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">forms</button>
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
@@ -65,9 +77,9 @@ function populateModal(data) {
                 <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
                     <ol class="about-list">
                         ${data.stats.map(stat => `
-                            <li>${stat.stat.name}
+                            <li>${stat.stat.name}: 
                                 <div class="progress" role="progressbar" aria-label="${stat.stat.name}" aria-valuenow="${stat.base_stat}" aria-valuemin="0" aria-valuemax="100">
-                                    <div class="progress-bar bg-danger" style="width: ${stat.base_stat}%"></div>
+                                    <div class="progress-bar bg-danger" style="width: ${stat.base_stat}%">${stat.base_stat}</div>
                                 </div>
                             </li>
                         `).join('')}
