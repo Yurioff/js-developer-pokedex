@@ -5,7 +5,8 @@ Este é um projeto de uma Pokédex, desenvolvido como parte de um desafio na pla
 https://js-developer-pokedex-virid-three.vercel.app
 
 ## Gif
-![Screenshop 1](gif/1.gif)
+![Screenshop 1](gif/1.png)
+![screenshop 2](gif/2.png)
 
 ## Funcionalidades Implementadas
 
