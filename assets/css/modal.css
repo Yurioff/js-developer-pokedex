@@ -76,3 +76,13 @@ dialog{
 .card-body {
     text-align: left;
 }
+
+.status_li{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.content_progress{
+    width: 170px;
+}

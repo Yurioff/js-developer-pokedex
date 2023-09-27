@@ -1,9 +1,12 @@
 .pokemons {
     display: grid;
     grid-template-columns: 1fr;
-    margin: 0;
+    margin-top: 155px;
     padding: 0;
     list-style: none;
+
+
+    
 }
 
 .normal {
@@ -84,6 +87,11 @@
     margin: .5rem;
     padding: 1rem;
     border-radius: 1rem;
+    border: solid 1px gray;
+
+    -webkit-box-shadow: 15px 15px 63px -7px;
+    -moz-box-shadow: 15px 15px 63px -7px;
+    box-shadow: 15px 15px 63px -7px;
 }
 
 .pokemon .number {

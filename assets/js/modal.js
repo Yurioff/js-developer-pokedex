@@ -50,19 +50,19 @@ function populateModal(data) {
             </div>
         </div>
         <div class="card-body">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <ul class="nav nav-tabs active" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">About</button>
+                    <button class="nav-link " id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">About</button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Status</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">forms</button>
+                    <button class="nav-link" id="form-tab" data-bs-toggle="tab" data-bs-target="#form-tab-pane" type="button" role="tab" aria-controls="form-tab-pane" aria-selected="false">forms</button>
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                <div class="tab-pane fade show" id="home-tab-pane" role="tabpanel" aria-labelled by="home-tab" tabindex="0">
                     <ol class="about-list">
                         <li>
                             <h5>Weight</h5>
@@ -74,14 +74,21 @@ function populateModal(data) {
                         </li>
                     </ol>
                 </div>
-                <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelled by="profile-tab" tabindex="0">
                     <ol class="about-list">
                         ${data.stats.map(stat => `
-                            <li>${stat.stat.name}: 
-                                <div class="progress" role="progressbar" aria-label="${stat.stat.name}" aria-valuenow="${stat.base_stat}" aria-valuemin="0" aria-valuemax="100">
-                                    <div class="progress-bar bg-danger" style="width: ${stat.base_stat}%">${stat.base_stat}</div>
+                            <li class="status_li">${stat.stat.name}: 
+                                <div class="progress content_progress" role="progressbar" aria-label="${stat.stat.name}" aria-valuenow="${stat.base_stat}" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar bg-success" style="width: ${stat.base_stat}%">${stat.base_stat}</div>
                                 </div>
                             </li>
+                        `).join('')}
+                    </ol>
+                </div>
+                <div class="tab-pane fade" id="form-tab-pane" role="tabpanel" aria-labelled by="form-tab" tabindex="0">
+                    <ol class="about-list">
+                        ${data.abilities.map(ability => `
+                            <p>${ability.ability.name}</p>
                         `).join('')}
                     </ol>
                 </div>
