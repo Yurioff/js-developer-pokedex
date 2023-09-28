@@ -58,7 +58,7 @@ function populateModal(data) {
                     <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Status</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="form-tab" data-bs-toggle="tab" data-bs-target="#form-tab-pane" type="button" role="tab" aria-controls="form-tab-pane" aria-selected="false">forms</button>
+                    <button class="nav-link" id="form-tab" data-bs-toggle="tab" data-bs-target="#form-tab-pane" type="button" role="tab" aria-controls="form-tab-pane" aria-selected="false">ability</button>
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
